@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +12,7 @@ namespace DAL.Contexts
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=localhost;Database=CompanyDB;User Id=sa;Password=your_password;");
+            optionsBuilder.UseSqlServer("Server=.;Database=CompanyDB;Trusted_Connection=true;TrustServerCertificate=true");
         }
 
         public DbSet<Department> Departments { get; set; }
